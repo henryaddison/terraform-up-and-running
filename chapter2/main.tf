@@ -20,4 +20,12 @@ resource "aws_instance" "example" {
     tags = {
         Name = "terraform-example"
     }
+
+    user_data = <<-EOF
+        #!/bin/bash
+        echo "Hello, world" > index.html
+        nohup busybox httpd -f -p 8080&
+    EOF
+
+    vpc_security_group_ids = [aws_security_group.example_web_server_sg.id]
 }
