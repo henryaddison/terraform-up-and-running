@@ -36,3 +36,13 @@ resource "aws_instance" "example" {
 
     vpc_security_group_ids = [aws_security_group.example_web_server_sg.id]
 }
+
+output "public_dns" {
+    description = "DNS record of the example instance"
+    value = aws_instance.example.public_dns
+}
+
+output "public_web_server_address" {
+    description = "Address (hostname and port) of the example web webserver"
+    value = "${aws_instance.example.public_dns}:${var.web_server_port}"
+}
