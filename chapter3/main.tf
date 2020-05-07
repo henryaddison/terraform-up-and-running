@@ -1,10 +1,8 @@
+# Partial configuration. The other settings (e.g., bucket, region) will be
+# passed in from a file via -backend-config arguments to 'terraform init'
 terraform {
     backend "s3" {
-        bucket = "hja22-terraform-up-and-running-state"
         key = "global/s3/terraform.tfstate"
-        region = "us-east-2"
-        dynamodb_table = "terraform-up-and-running-state-locks"
-        encrypt = true
     }
 }
 
