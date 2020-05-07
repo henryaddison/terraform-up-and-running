@@ -1,1 +1,4 @@
 author-code
+.terraform
+*.tfstate
+*.tfstate.backup
