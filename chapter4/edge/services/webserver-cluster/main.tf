@@ -11,7 +11,7 @@ provider "aws" {
 }
 
 module "webserver_cluster" {
-    source = "git@github.com:henryaddison/terraform-up-and-running.git//chapter4/modules/services/webserver-cluster?ref=v0.0.1"
+    source = "../../../modules/services/webserver-cluster"
 
     cluster_name = "webservers-edge"
     db_remote_state_bucket = "hja22-terraform-up-and-running-state"

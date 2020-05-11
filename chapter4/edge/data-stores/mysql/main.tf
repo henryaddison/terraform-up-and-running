@@ -11,7 +11,7 @@ provider "aws" {
 }
 
 module "database" {
-    source = "git@github.com:henryaddison/terraform-up-and-running.git//chapter4/modules/data-stores/mysql?ref=v0.0.1"
+    source = "../../../modules/data-stores/mysql"
     
     database_identifier_prefix = "terraform-up-and-running-mysql-edge"
     db_master_password_secret_id = "terraform-up-and-running/edge/data-stores/mysql/password"
