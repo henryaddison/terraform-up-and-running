@@ -17,8 +17,3 @@ module "webserver_cluster" {
     db_remote_state_bucket = "hja22-terraform-up-and-running-state"
     db_remote_state_key = "production/data-stores/mysql/terraform.tfstate"
 }
-
-output "alb_dns_name" {
-    value       = module.webserver_cluster.alb_dns_name
-    description = "The domain name of the load balancer"
-}
