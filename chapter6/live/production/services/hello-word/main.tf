@@ -10,7 +10,7 @@ provider "aws" {
 }
 
 module "hello_world_app" {
-    source = "../../../../modules/services/hello-world-app"
+    source = "git@github.com:henryaddison/terraform-up-and-running.git//chapter6/modules/services/hello-world-app?ref=v0.0.3"
 
     environment = var.environment
     server_text = var.server_text
